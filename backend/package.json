@@ -1,0 +1,15 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "NodeJS Server for MyBreweryCompanion App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Senad Zenkovic",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.20",
+    "typescript": "^4.9.5"
+  }
+}
