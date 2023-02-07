@@ -1,8 +1,10 @@
 import React, { createContext, useState, useEffect, useContext} from 'react'
 
 type AppDataContextType = {
-  itemOne: string;
-  setItemOne: React.Dispatch<React.SetStateAction<string>>;
+  isDesktop: boolean;
+  lastWindowWidth: number;
+  windowWidth: number;
+  windowVisualViewportHeight: number;
 }
 
 export const AppDataContext = createContext<null | AppDataContextType>(null);
@@ -14,9 +16,32 @@ interface Props {
 }
 
 export const AppData = ({ children }: Props) => {
-    const [itemOne, setItemOne] = useState('')
-  return (
-    <AppDataContext.Provider value={{itemOne, setItemOne}}>
+  const [_appContext, setAppContext] = useState({
+    isDesktop: window.innerWidth > 991,
+    windowWidth: window.innerWidth,
+    lastWindowWidth: window.innerWidth,
+    windowVisualViewportHeight: window.visualViewport.height,
+  });
+
+  const onWindowResize = () => {
+    if (_appContext.windowWidth !== window.innerWidth) {
+      const lastWindowWidth = _appContext.windowWidth;
+      setAppContext({
+        lastWindowWidth,
+        isDesktop: window.innerWidth > 991,
+        windowWidth: window.innerWidth,
+        windowVisualViewportHeight: window.visualViewport.height,
+      });
+    }
+  };
+
+  useEffect(() => {
+    window.removeEventListener('resize', onWindowResize);
+    window.addEventListener('resize', onWindowResize);
+
+    return () => window.removeEventListener('resize', onWindowResize);
+  }, [onWindowResize]);  return (
+    <AppDataContext.Provider value={_appContext}>
         {children}
     </AppDataContext.Provider>
   )

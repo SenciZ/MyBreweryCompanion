@@ -1,13 +1,17 @@
 import React from 'react'
 import { useAppData } from '../../contexts/appData'
+import useWindowWidth from '../../hooks/useWindowWidth';
 
 function TestG() {
 
-  const {itemOne, setItemOne} = useAppData()
+  const {isDesktop, windowWidth} = useAppData()
+  const width = useWindowWidth();
 
-  console.log(itemOne)
+  // console.log(windowWidth)
   return (
-    <div>This is TestG Component {itemOne} <button onClick={()=> setItemOne(prev => prev+1)}>Click</button></div>
+    <div>This is TestG Component {windowWidth}
+    {!isDesktop && <h1>Mobile View <span>{width}</span></h1>}
+     </div>
   )
 }
 
