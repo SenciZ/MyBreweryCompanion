@@ -1,7 +1,11 @@
 import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { AppData } from "../../contexts/appData";
 import useWindowWidth from "../../hooks/useWindowWidth";
+import { Home } from "../../pages/Home";
 import { NavBar } from "../Header";
+import { Hooks } from "../Hooks";
+import { MainRouter } from "../MainRouter";
 
 import { AppContainer } from "./styles";
 
@@ -11,14 +15,13 @@ interface IProps {
 };
 
 export const App: React.FC<IProps> = ({ classname = '' }) => {
-  const width = useWindowWidth();
 
   return (
-    <AppData>
-      <AppContainer className={ classname }>
-        <h1>This is app container <span>{width}</span></h1>
+      <BrowserRouter>
+      <AppData>
         <NavBar />
-      </AppContainer>
-    </AppData>
+        <MainRouter/>
+      </AppData>
+      </BrowserRouter>
   )
 };
