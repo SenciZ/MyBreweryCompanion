@@ -1,6 +1,7 @@
-import React, { useEffect, useContext } from "react";
+import React from "react";
 import { AppData } from "../../contexts/appData";
-import TestG from "../Test/Testg";
+import useWindowWidth from "../../hooks/useWindowWidth";
+import { NavBar } from "../Header";
 
 import { AppContainer } from "./styles";
 
@@ -10,18 +11,13 @@ interface IProps {
 };
 
 export const App: React.FC<IProps> = ({ classname = '' }) => {
-
-
-  useEffect(() => {
-    console.log('adsfas')
-
-  }, [])
+  const width = useWindowWidth();
 
   return (
     <AppData>
       <AppContainer className={ classname }>
-        <h1>This is app container </h1>
-        <TestG />
+        <h1>This is app container <span>{width}</span></h1>
+        <NavBar />
       </AppContainer>
     </AppData>
   )

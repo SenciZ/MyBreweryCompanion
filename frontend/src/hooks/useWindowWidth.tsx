@@ -5,14 +5,16 @@ import {useState, useEffect } from 'react'
 function useWindowWidth(): number {
     const [width, setWidth] = useState<number>(window.innerWidth);
 
-    const windowResize = () =>{
+    const onWindowResize = () =>{
         setWidth(window.innerWidth)
     }
 
     useEffect(()=>{
-        window.addEventListener('resize', windowResize)
+        window.removeEventListener('resize', onWindowResize);
+
+        window.addEventListener('resize', onWindowResize)
         
-        return () => window.removeEventListener('resize', windowResize)
+        return () => window.removeEventListener('resize', onWindowResize)
     },[])
 
     return width;
