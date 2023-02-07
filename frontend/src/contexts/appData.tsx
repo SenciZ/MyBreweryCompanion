@@ -1,23 +1,23 @@
-import React, { createContext, useState, useEffect} from 'react'
+import React, { createContext, useState, useEffect, useContext} from 'react'
 
-
-interface AppContextProps {
-    name: string,
+type AppDataContextType = {
+  itemOne: string;
+  setItemOne: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const AppDataContext = createContext<AppContextProps>({name: ''});
+export const AppDataContext = createContext<null | AppDataContextType>(null);
 
-export interface AppDataProps {
-    children: React.ReactNode,
+export const useAppData = () => useContext(AppDataContext);
+
+interface Props {
+  children: React.ReactNode;
 }
 
-export const AppData = (props: AppDataProps) => {
-    const [name, setName] = useState('Timmy')
+export const AppData = ({ children }: Props) => {
+    const [itemOne, setItemOne] = useState('')
   return (
-    <AppDataContext.Provider value={{
-        name,
-    }}>
-        {props.children}
+    <AppDataContext.Provider value={{itemOne, setItemOne}}>
+        {children}
     </AppDataContext.Provider>
   )
 }

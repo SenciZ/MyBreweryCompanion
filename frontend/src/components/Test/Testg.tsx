@@ -1,11 +1,13 @@
-import React, { useContext } from 'react'
-import { AppData } from '../../contexts/appData'
+import React from 'react'
+import { useAppData } from '../../contexts/appData'
 
 function TestG() {
 
-  const { name } = useContext(AppData)
+  const {itemOne, setItemOne} = useAppData()
+
+  console.log(itemOne)
   return (
-    <div>{name}</div>
+    <div>This is TestG Component {itemOne} <button onClick={()=> setItemOne(prev => prev+1)}>Click</button></div>
   )
 }
 

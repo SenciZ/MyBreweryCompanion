@@ -1,5 +1,6 @@
 import React, { useEffect, useContext } from "react";
-import { AppData, AppDataProps } from "../../contexts/appData";
+import { AppData } from "../../contexts/appData";
+import TestG from "../Test/Testg";
 
 import { AppContainer } from "./styles";
 
@@ -19,8 +20,8 @@ export const App: React.FC<IProps> = ({ classname = '' }) => {
   return (
     <AppData>
       <AppContainer className={ classname }>
-        <h1>This is app container {name} </h1>
-        <h2>{}</h2>
+        <h1>This is app container </h1>
+        <TestG />
       </AppContainer>
     </AppData>
   )
