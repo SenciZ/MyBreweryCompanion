@@ -83,33 +83,10 @@ export const LineClamp = css`
   display: -webkit-box;
 `;
 
-export const BoxShadow = css`
-  box-shadow: 0 4px 8px -8px ${({ theme }) => theme.colors.darkGray3};
-`;
+// export const BoxShadow = css`
+//   box-shadow: 0 4px 8px -8px ${({ theme }) => theme.colors.darkGray3};
+// `;
 
-export const InsetBoxShadow = css`
-  box-shadow: 0 4px 8px -8px inset ${({ theme }) => theme.colors.darkGray3};
-`;
-
-export const InsetAndOuterBoxShadow = css`
-  box-shadow: 0 4px 8px -8px ${({ theme }) => theme.colors.darkGray3}, inset 0 4px 8px -8px ${({ theme }) => theme.colors.darkGray3};
-`;
-
-export const AnchorStyles = css`
-  color: ${({ theme }) => theme.colors.darkGreen1};
-  text-decoration: none;
-
-  &:focus-visible,
-  &:hover {
-    color: ${({ theme }) => theme.colors.blue};
-    text-decoration: underline;
-  }
-
-  &:focus-visible {
-    outline: 1px dashed ${({ theme }) => theme.colors.darkGray1};
-    outline-offset: 1px;
-  }
-`;
 
 export const ScreenReaderOnly = css`
   position: absolute;
@@ -120,14 +97,3 @@ export const ScreenReaderOnly = css`
   overflow: hidden;
 `;
 
-export const FocusVisible = css`
-  &:focus-visible {
-    outline: ${({ theme }) => `1px dashed ${theme.colors.darkGray1}`};
-    outline-offset: 1px;
-  }
-`;
-
-export const GlobalStylesObj = {
-  BasicContainer,
-  BasicContainer2,
-}
