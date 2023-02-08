@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { AppData, AppDataContext } from '../../contexts/appData';
+import { useAppData } from '../../contexts/appData';
 import { HomePageContainer } from './styles';
 
 interface IProps {
@@ -8,10 +8,10 @@ interface IProps {
 
 export const Home: React.FC<IProps> = ({classname = ''}) => {
 
-    const appData = useContext(AppDataContext)
+    const { windowWidth, isDesktop } = useAppData()
     return (
         <HomePageContainer>
-            <h1>Home Page {appData.windowWidth}</h1>
+            <h1>Home Page {windowWidth}{isDesktop.toString()}</h1>
         </HomePageContainer>
     )
 }

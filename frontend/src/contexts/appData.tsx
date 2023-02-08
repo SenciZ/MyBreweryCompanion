@@ -40,7 +40,9 @@ export const AppData = ({ children }: Props) => {
     window.addEventListener('resize', onWindowResize);
 
     return () => window.removeEventListener('resize', onWindowResize);
-  }, []);  return (
+  }, []);
+  
+  return (
     <AppDataContext.Provider value={_appContext}>
         {children}
     </AppDataContext.Provider>
