@@ -8,7 +8,6 @@ import { Hooks } from "../Hooks";
 import { MainRouter } from "../MainRouter";
 import { theme } from '../../styles/themes'
 
-
 interface IProps {
   classname?: string;
 };
@@ -16,15 +15,15 @@ interface IProps {
 export const App: React.FC<IProps> = () => {
 
   return (
-      <AppData>
-        <ThemeProvider theme={ theme }>
-          <BrowserRouter>
-            <GlobalStyle/>
-            <Hooks />
-            <NavBar />
-            <MainRouter/>
-          </BrowserRouter>
-        </ThemeProvider>
-      </AppData>
+    <AppData>
+      <ThemeProvider theme={theme}>
+        <BrowserRouter>
+          <GlobalStyle />
+          <Hooks />
+          <NavBar />
+          <MainRouter />
+        </BrowserRouter>
+      </ThemeProvider>
+    </AppData>
   )
 };

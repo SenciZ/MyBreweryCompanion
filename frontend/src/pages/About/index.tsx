@@ -1,10 +1,13 @@
 import React from 'react'
+import { AboutPageContainer } from './styles'
 
 type Props = {}
 
 export const About = (props: Props) => {
   return (
-    <div>About</div>
+    <AboutPageContainer>
+      About me
+    </AboutPageContainer>
   )
 }
 
