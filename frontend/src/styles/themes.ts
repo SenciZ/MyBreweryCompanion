@@ -16,9 +16,9 @@ export const theme: DefaultTheme = {
     xlMin: 'min-width: 1200px',
   },
   colors: {
-    primary: 'yellow',
-    disabled: '#BABAC2',
-    success: '#4CAF50',
-    danger: '#FF0D25',
+    primary: '#FFBA08',
+    secondary: '#C44622',
+    tertiary: '#313131',
+    quaternary: '#ADADAD',
   },
 };

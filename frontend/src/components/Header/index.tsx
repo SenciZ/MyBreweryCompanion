@@ -1,14 +1,16 @@
 import React from 'react'
 import { useAppData } from '../../contexts/appData';
-import { NavBarContainer } from './styles';
+import { HeaderContainer, NavBarContainer } from './styles';
 
 type IProps = {
   classname?: string;
 }
 
-export const NavBar: React.FC<IProps> = ({ classname = '' }) => {
+export const Header: React.FC<IProps> = ({ classname = '' }) => {
   const { windowWidth } = useAppData();
   return (
-    <NavBarContainer className={classname}>NavBar{windowWidth}</NavBarContainer>
+    <HeaderContainer>
+      <NavBarContainer className={classname}>NavBar{windowWidth}</NavBarContainer>
+    </HeaderContainer>
   )
 }

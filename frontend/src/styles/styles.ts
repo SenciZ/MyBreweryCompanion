@@ -83,9 +83,9 @@ export const LineClamp = css`
   display: -webkit-box;
 `;
 
-// export const BoxShadow = css`
-//   box-shadow: 0 4px 8px -8px ${({ theme }) => theme.colors.darkGray3};
-// `;
+export const BoxShadow = css`
+  box-shadow: 0 4px 8px -8px ${({ theme }) => theme.colors.darkGray3};
+`;
 
 
 export const ScreenReaderOnly = css`

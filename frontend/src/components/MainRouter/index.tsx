@@ -1,11 +1,11 @@
 import React from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import { About } from '../../pages/About'
 import { Home } from '../../pages/Home'
 
-type Props = {}
+type IProps = {}
 
-export const MainRouter = (props: Props) => {
+export const MainRouter: React.FC<IProps> = () => {
   return (
         <Routes>
             <Route path='/*' element={<Home />} />
