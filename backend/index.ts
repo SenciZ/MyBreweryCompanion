@@ -1,5 +1,9 @@
 import express from 'express';
+import {userRouter} from './src/routes/user'
 
-const App = express();
+const app = express();
 
-App.listen(4000, () => console.log('Listening on prot 4000'));
+app.use('/', userRouter)
+
+app.listen(4000, () => console.log('Listening on port 4000'));
+
