@@ -20,6 +20,7 @@ lerna-debug.log*
 
 # production
 /build
+/dist
 
 # misc
 .DS_Store
@@ -107,7 +108,7 @@ typings/
 
 # Nuxt.js build / generate output
 .nuxt
-dist
+# dist
 
 # Gatsby files
 .cache/
