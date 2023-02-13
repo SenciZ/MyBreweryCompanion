@@ -7,4 +7,5 @@ userRouter.get('/register', (req, res) => {
 });
 
 userRouter.get('/user', userController.userRegister);
+userRouter.post('/user', userController.userSave);
 
