@@ -27,7 +27,7 @@ exports.polulateDB = async (req, res ) => {
                             longitude: brewery.longitude,
                             latitude: brewery.latitude,
                             phone: brewery.phone,
-                            website: brewery.webiste_url,
+                            website: brewery.website_url,
                         }).save();
                     });
                 })
