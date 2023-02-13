@@ -1,5 +1,5 @@
 import axios from "axios";
-const Brewery = require('../models/brewery')
+import { BreweryModel } from "../models/brewery";
 
 // used to read all breweries in United States from OpenBrewery and put them into MongoDB
 exports.polulateDB = async (req, res ) => {
@@ -16,7 +16,7 @@ exports.polulateDB = async (req, res ) => {
                             return;
     
                         }
-                        await new Brewery({
+                        await new BreweryModel({
                             name: brewery.name,
                             street: brewery.street,
                             address2: brewery.address2,
