@@ -11,7 +11,15 @@ export const Header: React.FC<IProps> = ({ classname = '' }) => {
 
   const renderMobileNav = () => {
     return (
-      <MobileNavContainer />
+      <MobileNavContainer>
+        <nav>
+          <ul>
+            <li><a href='#'>Link 1</a></li>
+            <li><a href='#'>Link 2</a></li>
+            <li><a href='#'>Link 3</a></li>
+          </ul>
+        </nav>
+      </MobileNavContainer>
     )
   }
 
