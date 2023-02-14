@@ -11,3 +11,11 @@ export const HeaderContainer = styled.header`
 export const NavBarContainer = styled(MaxBoundaryContainer)`
     height: 50px;
 `;
+
+export const MobileNavContainer = styled.div`
+    position: fixed;
+    left: 0;
+    width: 100vw;
+    background: ${({ theme }) => theme.colors.primary};
+    height: 100vh;
+`;
