@@ -32,7 +32,7 @@ export const FlexCol = css`
 `;
 
 export const FlexColCenter = css`
-  ${FlexCol}
+  display: flex;
   justify-content: center;
 `;
 

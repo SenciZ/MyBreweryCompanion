@@ -10,7 +10,7 @@ export const Header: React.FC<IProps> = ({ classname = '' }) => {
   const { windowWidth } = useAppData();
   return (
     <HeaderContainer>
-      <NavBarContainer className={classname}>NavBar{windowWidth}</NavBarContainer>
+      <NavBarContainer className={'navBarContainer' + classname}>NavBar{windowWidth}</NavBarContainer>
     </HeaderContainer>
   )
 }
