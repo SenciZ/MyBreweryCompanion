@@ -1,5 +1,6 @@
 import React from 'react'
 import { useAppData } from '../../contexts/appData';
+import { HamburgerIcon } from '../HamburgerIcon';
 import { HeaderContainer, MobileNavContainer, NavBarContainer } from './styles';
 
 type IProps = {
@@ -36,6 +37,8 @@ export const Header: React.FC<IProps> = ({ classname = '' }) => {
   return (
     <HeaderContainer>
       <NavBarContainer className={'navBarContainer' + classname}>
+      <HamburgerIcon />
+
       { renderNavigation() }
       </NavBarContainer>
     </HeaderContainer>
