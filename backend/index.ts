@@ -1,11 +1,15 @@
 import express, { Express, Request, Response } from 'express';
 import path from 'path';
-import dotenv from 'dotenv'
 import mongoose from 'mongoose';
-const userRouter = require('./src/routes/user')
-const cors = require('cors');
-const app:Express = express();
+import userRouter from './src/routes/user';
+import cors from 'cors'; //const cors = require('cors');
+import dotenv from 'dotenv';
+
 dotenv.config();
+const PORT = process.env.PORT || 4000;
+
+const app:Express = express();
+
 app.use(cors());
 app.use(express.json());
 
@@ -19,6 +23,5 @@ app.get('/', (req, res) => res.sendFile(path.join(__dirname, "../../frontend/bui
 
 app.use('/user', userRouter);
 
-const PORT = process.env.PORT || 4000
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
 
