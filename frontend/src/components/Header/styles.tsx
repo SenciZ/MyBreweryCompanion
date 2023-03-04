@@ -10,15 +10,5 @@ export const HeaderContainer = styled.header`
 `;
 
 export const NavBarContainer = styled(MaxBoundaryContainer)`
-    height: 50px;
-`;
-
-export const MobileNavContainer = styled.div`
-    z-index: 10;
-    position: fixed;
-    left: 0;
-    top: 52px;
-    width: 100vw;
-    background: rgba(233,233,233);
-    height: 100vh;
+    padding: 5px 0;
 `;

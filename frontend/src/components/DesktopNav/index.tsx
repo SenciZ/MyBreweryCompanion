@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { AppLogo } from "../Logo";
-import { DesktopNavContainer } from "./styles";
+import { DesktopNavContainer, NavLinksContainer } from "./styles";
 
 interface IProps {
     classname?: string;
@@ -9,18 +9,21 @@ interface IProps {
 interface NavLink {
     name: string;
     classname: string;
+    id: string;
     to: string;
 }
 
 const navLinks: NavLink[] = [
     {
         name: 'About',
-        classname: 'about-link',
+        classname: 'nav-link',
+        id: 'about-link',
         to: '/about'
     },
     {
         name: 'Browse Breweries',
-        classname: 'browse-link',
+        classname: 'nav-link',
+        id: 'about-link',
         to: '/browse'
     },
 ]
@@ -30,16 +33,16 @@ export const DesktopNav: React.FC<IProps> = ({ classname = '' }) => {
     const renderLinks = () => {
         const links = navLinks.map((link) => {
             return (
-                <Link to={link.to}>{link.name}</Link>
+                <Link to={ link.to } className={ link.classname }>{ link.name }</Link>
             )
         })
-        return links;
+        return <NavLinksContainer>{ links }</NavLinksContainer>;
     }
 
     return (
         <DesktopNavContainer>
             <AppLogo />
-            {renderLinks()}
+                { renderLinks() }
         </DesktopNavContainer>
     );
 }

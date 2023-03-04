@@ -1,8 +1,10 @@
 import styled from "styled-components";
+import { FlexCol, FlexColCenter } from "./styles";
 
 export const Section = styled.section`
+    ${FlexColCenter}
     width: 100%;
-    padding: 30px 15px;
+    background-color: #FFF;
 `;
 
 export const MaxBoundaryContainer = styled.div`

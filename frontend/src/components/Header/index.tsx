@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useAppData } from '../../contexts/appData';
 import { DesktopNav } from '../DesktopNav';
 import { HamburgerIcon } from '../HamburgerIcon';
-import { HeaderContainer, MobileNavContainer, NavBarContainer } from './styles';
+import { HeaderContainer, NavBarContainer } from './styles';
 
 type IProps = {
   classname?: string;
