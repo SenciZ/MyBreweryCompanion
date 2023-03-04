@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { MaxBoundaryContainer } from "../../styles/containers";
-import { FlexCenter, FlexCol, FlexColCenter } from "../../styles/styles";
+import { FlexColCenter } from "../../styles/styles";
 
 export const HeaderContainer = styled.header`
     ${FlexColCenter}

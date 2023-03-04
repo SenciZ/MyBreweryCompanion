@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { FlexCol, FlexColCenter } from "./styles";
+import { FlexColCenter } from "./styles";
 
 export const Section = styled.section`
     ${FlexColCenter}

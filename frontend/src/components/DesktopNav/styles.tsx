@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { FlexCenter } from "../../styles/styles";
 
 export const DesktopNavContainer = styled.div`
     display: flex;
