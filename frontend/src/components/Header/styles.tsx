@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import { MaxBoundaryContainer } from "../../styles/components/containers";
+import { MaxBoundaryContainer } from "../../styles/containers";
 import { FlexCenter, FlexCol, FlexColCenter } from "../../styles/styles";
 
 export const HeaderContainer = styled.header`
     ${FlexColCenter}
     z-index: 100;
     min-width: 100%;
-    background: ${({ theme }) => theme.colors.primary }
+    background: ${({ theme }) => theme.colors.tertiary }
 `;
 
 export const NavBarContainer = styled(MaxBoundaryContainer)`

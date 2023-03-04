@@ -1,5 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import { useAppData } from '../../contexts/appData';
+import { DesktopNav } from '../DesktopNav';
 import { HamburgerIcon } from '../HamburgerIcon';
 import { HeaderContainer, MobileNavContainer, NavBarContainer } from './styles';
 
@@ -8,37 +10,16 @@ type IProps = {
 }
 
 export const Header: React.FC<IProps> = ({ classname = '' }) => {
-  const { windowWidth, isDesktop } = useAppData();
-
-  const renderMobileNav = () => {
-    return (
-      <MobileNavContainer>
-        <nav>
-          <ul>
-            <li><a href='#'>Link 1</a></li>
-            <li><a href='#'>Link 2</a></li>
-            <li><a href='#'>Link 3</a></li>
-          </ul>
-        </nav>
-      </MobileNavContainer>
-    )
-  }
-
-  const renderDesktopNav = () => {
-    return (
-      <div>Desktop Nav</div>
-    )
-  }
+  const { isDesktop } = useAppData();
 
   const renderNavigation = () => {
-    if (!!isDesktop) return renderDesktopNav();
-    return renderMobileNav();
+    if (!!isDesktop) return <DesktopNav />;
+    return 'Hello';
   }
   return (
     <HeaderContainer>
       <NavBarContainer className={'navBarContainer' + classname}>
-      <HamburgerIcon />
-
+      {/* <HamburgerIcon /> */}
       { renderNavigation() }
       </NavBarContainer>
     </HeaderContainer>

@@ -1,0 +1,253 @@
+
+/* //////////////////////////////////////////////////////////// --------- Raleway Font -------- ////////////////////////////////////////////////////////////// */
+@font-face {
+  font-family: 'Raleway';
+  font-style: black;
+  font-weight: 900;
+  src: url('./assets/fonts/Raleway/Raleway-Black.ttf');
+  src: local(''),
+       url('./assets/fonts/Raleway/Raleway-Black.ttf') format('truetype'),
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 900;
+  src: url('./assets/fonts/Raleway/Raleway-BlackItalic.ttf');
+  src: local(''),
+       url('./assets/fonts/Raleway/Raleway-BlackItalic.ttf') format('truetype'),
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: bold;
+  font-weight: 800;
+  src: url('./assets/fonts/Raleway/Raleway-ExtraBold.ttf');
+  src: local(''),
+       url('./assets/fonts/Raleway/Raleway-ExtraBold.ttf') format('truetype'),
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 800;
+  src: url('./assets/fonts/Raleway/Raleway-ExtraBoldItalic.ttf');
+  src: local(''),
+       url('./assets/fonts/Raleway/Raleway-ExtraBoldItalic.ttf') format('truetype'),
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./assets/fonts/Raleway/Raleway-Bold.ttf');
+  src: local(''),
+       url('./assets/fonts/Raleway/Raleway-Bold.ttf') format('truetype'),
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 700;
+  src: url('./assets/fonts/Raleway/Raleway-BoldItalic.ttf');
+  src: local(''),
+       url('./assets/fonts/Raleway/Raleway-BoldItalic.ttf') format('truetype'),
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 600;
+  src: url('./assets/fonts/Raleway/Raleway-SemiBold.ttf');
+  src: local(''),
+       url('./assets/fonts/Raleway/Raleway-SemiBold.ttf') format('truetype'),
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 600;
+  src: url('./assets/fonts/Raleway/Raleway-SemiBoldItalic.ttf');
+  src: local(''),
+       url('./assets/fonts/Raleway/Raleway-SemiBoldItalic.ttf') format('truetype'),
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 500;
+  src: url('./assets/fonts/Raleway/Raleway-Medium.ttf');
+  src: local(''),
+       url('./assets/fonts/Raleway/Raleway-Medium.ttf') format('truetype'),
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 500;
+  src: url('./assets/fonts/Raleway/Raleway-MediumItalic.ttf');
+  src: local(''),
+       url('./assets/fonts/Raleway/Raleway-MediumItalic.ttf') format('truetype'),
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./assets/fonts/Raleway/Raleway-Regular.ttf');
+  src: local(''),
+       url('./assets/fonts/Raleway/Raleway-Regular.ttf') format('truetype'),
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 300;
+  src: url('./assets/fonts/Raleway/Raleway-Light.ttf');
+  src: local(''),
+       url('./assets/fonts/Raleway/Raleway-Light.ttf') format('truetype'),
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 300;
+  src: url('./assets/fonts/Raleway/Raleway-LightItalic.ttf');
+  src: local(''),
+       url('./assets/fonts/Raleway/Raleway-LightItalic.ttf') format('truetype'),
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 200;
+  src: url('./assets/fonts/Raleway/Raleway-ExtraLight.ttf');
+  src: local(''),
+       url('./assets/fonts/Raleway/Raleway-ExtraLight.ttf') format('truetype'),
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 200;
+  src: url('./assets/fonts/Raleway/Raleway-ExtraLightItalic.ttf');
+  src: local(''),
+       url('./assets/fonts/Raleway/Raleway-ExtraLightItalic.ttf') format('truetype'),
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 100;
+  src: url('./assets/fonts/Raleway/Raleway-Thin.ttf');
+  src: local(''),
+       url('./assets/fonts/Raleway/Raleway-Thin.ttf') format('truetype'),
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 100;
+  src: url('./assets/fonts/Raleway/Raleway-ThinItalic.ttf');
+  src: local(''),
+       url('./assets/fonts/Raleway/Raleway-ThinItalic.ttf') format('truetype'),
+}
+
+
+/* //////////////////////////////////////////////////////////// --------- Nunito Sans Font -------- ////////////////////////////////////////////////////////////// */
+@font-face {
+  font-family: 'NunitoSans';
+  font-style: normal;
+  font-weight: 200;
+  src: url('./assets/fonts/nunito-sans/NunitoSans-ExtraLight.ttf');
+  src: local(''),
+       url('./assets/fonts/nunito-sans/NunitoSans-ExtraLight.ttf') format('truetype'),
+}
+@font-face {
+  font-family: 'NunitoSans';
+  font-style: italic;
+  font-weight: 200;
+  src: url('./assets/fonts/nunito-sans/NunitoSans-ExtraLightItalic.ttf');
+  src: local(''),
+       url('./assets/fonts/nunito-sans/NunitoSans-ExtraLightItalic.ttf') format('truetype'),
+}
+@font-face {
+  font-family: 'NunitoSans';
+  font-style: normal;
+  font-weight: 300;
+  src: url('./assets/fonts/nunito-sans/NunitoSans-Light.ttf');
+  src: local(''),
+       url('./assets/fonts/nunito-sans/NunitoSans-Light.ttf') format('truetype'),
+}
+@font-face {
+  font-family: 'NunitoSans';
+  font-style: italic;
+  font-weight: 300;
+  src: url('./assets/fonts/nunito-sans/NunitoSans-LightItalic.ttf');
+  src: local(''),
+       url('./assets/fonts/nunito-sans/NunitoSans-LightItalic.ttf') format('truetype'),
+}
+@font-face {
+  font-family: 'NunitoSans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./assets/fonts/nunito-sans/NunitoSans-Regular.ttf');
+  src: local(''),
+       url('./assets/fonts/nunito-sans/NunitoSans-Regular.ttf') format('truetype'),
+}
+@font-face {
+  font-family: 'NunitoSans';
+  font-style: italic;
+  font-weight: 400;
+  src: url('./assets/fonts/nunito-sans/NunitoSans-Italic.ttf');
+  src: local(''),
+       url('./assets/fonts/nunito-sans/NunitoSans-Italic.ttf') format('truetype'),
+}
+@font-face {
+  font-family: 'NunitoSans';
+  font-style: bold;
+  font-weight: 600;
+  src: url('./assets/fonts/nunito-sans/NunitoSans-SemiBold.ttf');
+  src: local(''),
+       url('./assets/fonts/nunito-sans/NunitoSans-SemiBold.ttf') format('truetype'),
+}
+@font-face {
+  font-family: 'NunitoSans';
+  font-style: italic;
+  font-weight: 600;
+  src: url('./assets/fonts/nunito-sans/NunitoSans-SemiBoldItalic.ttf');
+  src: local(''),
+       url('./assets/fonts/nunito-sans/NunitoSans-SemiBoldItalic.ttf') format('truetype'),
+}
+@font-face {
+  font-family: 'NunitoSans';
+  font-style: bold;
+  font-weight: 700;
+  src: url('./assets/fonts/nunito-sans/NunitoSans-Bold.ttf');
+  src: local(''),
+       url('./assets/fonts/nunito-sans/NunitoSans-Bold.ttf') format('truetype'),
+}
+@font-face {
+  font-family: 'NunitoSans';
+  font-style: italic;
+  font-weight: 700;
+  src: url('./assets/fonts/nunito-sans/NunitoSans-BoldItalic.ttf');
+  src: local(''),
+       url('./assets/fonts/nunito-sans/NunitoSans-BoldItalic.ttf') format('truetype'),
+}
+@font-face {
+  font-family: 'NunitoSans';
+  font-style: bold;
+  font-weight: 800;
+  src: url('./assets/fonts/nunito-sans/NunitoSans-ExtraBold.ttf');
+  src: local(''),
+       url('./assets/fonts/nunito-sans/NunitoSans-ExtraBold.ttf') format('truetype'),
+}
+@font-face {
+  font-family: 'NunitoSans';
+  font-style: italic;
+  font-weight: 800;
+  src: url('./assets/fonts/nunito-sans/NunitoSans-ExtraBoldItalic.ttf');
+  src: local(''),
+       url('./assets/fonts/nunito-sans/NunitoSans-ExtraBoldItalic.ttf') format('truetype'),
+}
+@font-face {
+  font-family: 'NunitoSans';
+  font-style: bold;
+  font-weight: 900;
+  src: url('./assets/fonts/nunito-sans/NunitoSans-Black.ttf');
+  src: local(''),
+       url('./assets/fonts/nunito-sans/NunitoSans-Black.ttf') format('truetype'),
+}
+@font-face {
+  font-family: 'NunitoSans';
+  font-style: italic;
+  font-weight: 900;
+  src: url('./assets/fonts/nunito-sans/NunitoSans-BlackItalic.ttf');
+  src: local(''),
+       url('./assets/fonts/nunito-sans/NunitoSans-BlackItalic.ttf') format('truetype'),
+}
