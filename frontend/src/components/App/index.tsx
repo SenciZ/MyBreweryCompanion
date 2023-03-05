@@ -25,7 +25,7 @@ export const App: React.FC<IProps> = () => {
             <Hooks />
             <Header />
             <MainRouter />
-            <Footer />
+            {/* <Footer /> */}
           </AppContainer>
         </BrowserRouter>
       </ThemeProvider>

@@ -3,8 +3,9 @@ import { FlexColCenter } from "./styles";
 
 export const Section = styled.section`
     ${FlexColCenter}
+    padding: 20px 0;
+    box-sizing: border-box;
     width: 100%;
-    background-color: #FFF;
 `;
 
 export const MaxBoundaryContainer = styled.div`

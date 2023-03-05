@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { MaxBoundaryContainer, Section } from "../../styles/containers";
 
-export const HomePageContainer = styled(Section)`
+export const HomePageContainer = styled.div`
 `;
 
 
