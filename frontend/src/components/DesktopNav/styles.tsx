@@ -1,9 +1,11 @@
 import styled from "styled-components";
+import { PrimaryFont } from "../../styles/styles";
 
 export const DesktopNavContainer = styled.div`
     display: flex;
     width: 100%;
     background-color: ${({ theme }) => theme.colors.darkGray1};
+    ${PrimaryFont}
 `;
 
 export const NavLinksContainer = styled.nav`
