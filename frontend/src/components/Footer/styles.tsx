@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { MaxBoundaryContainer, Section } from "../../styles/containers";
+import { MaxBoundaryContainer } from "../../styles/containers";
 
 export const FooterContainer = styled.footer`
     height: 140px;

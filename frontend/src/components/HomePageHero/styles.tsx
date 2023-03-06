@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { MaxBoundaryContainer, Section } from "../../styles/containers";
+import { FlexCenter, FlexColCenter } from "../../styles/styles";
 
 export const HeroSectionContainer = styled(Section)`
     position: relative;
@@ -15,5 +16,15 @@ export const HeroSectionContainer = styled(Section)`
 `
 
 export const HeroSectionInner = styled(MaxBoundaryContainer)`
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 `
+
+export const HeroSectionInfo = styled.div`
+    width: 60%;
+
+    .hero-section-title {
+        color: #FFF;
+    }
+`;
