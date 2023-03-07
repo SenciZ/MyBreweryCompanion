@@ -1,3 +1,4 @@
+import { useCallback } from "react";
 import { Link } from "react-router-dom";
 import { AppLogo } from "../Logo";
 import { DesktopNavContainer, NavLinksContainer } from "./styles";
@@ -30,14 +31,14 @@ const navLinks: NavLink[] = [
 
 export const DesktopNav: React.FC<IProps> = ({ classname = '' }) => {
 
-    const renderLinks = () => {
+    const renderLinks = useCallback(() => {
         const links = navLinks.map((link) => {
             return (
                 <Link to={ link.to } className={ link.classname }>{ link.name }</Link>
             )
         })
         return <NavLinksContainer>{ links }</NavLinksContainer>;
-    }
+    },[]);
 
     return (
         <DesktopNavContainer>

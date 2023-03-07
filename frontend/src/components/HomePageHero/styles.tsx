@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import { MaxBoundaryContainer, Section } from "../../styles/containers";
-import { FlexCenter, FlexColCenter } from "../../styles/styles";
+import { FlexCenter, FlexColCenter, PrimaryFont } from "../../styles/styles";
 
 export const HeroSectionContainer = styled(Section)`
+    ${PrimaryFont}
     position: relative;
     padding: 30px 0;
     height: 95vh;
