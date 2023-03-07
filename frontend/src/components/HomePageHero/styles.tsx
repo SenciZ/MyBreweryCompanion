@@ -9,7 +9,7 @@ export const HeroSectionContainer = styled(Section)`
     height: 95vh;
     background-color: ${({ theme }) => theme.colors.primary};
     clip-path: polygon(100% 0, 100% 80%, 0 100%, 0 0);
-    background-image: url('https://res.cloudinary.com/dhvypalmy/image/upload/v1678038060/BreweryCompanion/beer-background_zfnc5l.png');
+    background-image: url('https://res.cloudinary.com/dhvypalmy/image/upload/v1678229304/BreweryCompanion/beer_mrx9gm.jpg');
     background-positon: left;
     background-size: cover;
     background-repeat: no-repeat;
