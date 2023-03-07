@@ -20,15 +20,15 @@ export const Counter: React.FC<IProps> = ({
         dispatch(increment())
     }
 
-    const changeText = (e: React.ChangeEvent<HTMLInputElement>) => {
-        dispatch(change(e.currentTarget.value))
-    }
+    // const changeText = (e: React.ChangeEvent<HTMLInputElement>) => {
+    //     dispatch(change(e.currentTarget.value))
+    // }
 
     return (
         <>
         <p className={ classname }>{ count }</p>
         <p className={ classname }>{ hello }</p>
-        <input type="text" onChange={changeText}/>
+        {/* <input type="text" onChange={changeText}/> */}
         <button onClick={incrementCounter}>Increment</button>
         </>
     )

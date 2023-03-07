@@ -1,18 +1,18 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export interface HelloState {
-    value: string
+    value: []
   }
   
   const initialState: HelloState = {
-    value:'Hello World',
+    value: []
   }
 
   export const helloSlice = createSlice({
     name: 'hello',
     initialState,
     reducers: {
-      change: (state, action: PayloadAction<string>) => {
+      change: (state, action: PayloadAction<[]>) => {
         state.value = action.payload
       },
     },

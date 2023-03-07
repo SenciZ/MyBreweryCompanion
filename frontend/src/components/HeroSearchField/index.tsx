@@ -1,5 +1,8 @@
 import { HeroSearchFieldContainer } from "./styles";
 import { useState } from "react";
+import { change } from "../../reducers/helloWorldReducer";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router";
 
 interface IProps {
     classname?: string;
@@ -7,6 +10,8 @@ interface IProps {
 
 export const HeroSearchField: React.FC<IProps> = ({ classname = '' }) => {
     const [searchString, setSearchString ] = useState('');
+    const dispatch = useDispatch();
+    const navigate = useNavigate()
 
     const onSearchStringUpdate = (e: any) => {
         setSearchString(e.target.value);
@@ -15,10 +20,14 @@ export const HeroSearchField: React.FC<IProps> = ({ classname = '' }) => {
     const onSearchClick = async ()=>{
         fetch(`/brewery-search?name=${searchString}`)
             .then( res => res.json())
-            .then( data => console.log(data));
+            .then( data => {
+                setSearchString('');
+                dispatch(change(data));
+                console.log(data)
+                navigate('/about');
+            });
     }
 
-    console.log(searchString);
     return (
         <HeroSearchFieldContainer>
             <label htmlFor='brewery-search' className='screen-reader-only'>Search for a Brewery Input</label>
