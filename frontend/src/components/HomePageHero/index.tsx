@@ -12,7 +12,7 @@ export const HomePageHero: React.FC<IProps> = () => {
         <HeroSectionInner>
             <HeroSectionInfo>
                 <H1 className="hero-section-title">Your one stop brewery guide, tracker and search tool...</H1>
-                <p>search breweries nation wide below.</p>
+                <h3>search breweries nation wide below.</h3>
                 <HeroSearchField />
             </HeroSectionInfo>
         </HeroSectionInner>

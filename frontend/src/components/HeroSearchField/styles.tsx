@@ -1,13 +1,20 @@
 import styled from "styled-components";
 import { PrimaryFont, SecondaryFont } from "../../styles/styles";
 
-export const HeroSearchFieldContainer = styled.div`
+export const HeroSearchFieldContainer = styled.form`
    background-color: #FFF;
    border-radius: 15px;
    height: 3rem;
    width: 90%;
    display: flex;
    justify-content: space-between;
+   position: relative;
+
+   .error-message {
+      position: absolute;
+      color: red;
+      top: calc(100% + 10px);
+   }
 
    input {
     ${SecondaryFont}

@@ -2,6 +2,7 @@ import express, { Express, Request, Response } from 'express';
 import path from 'path';
 import mongoose from 'mongoose';
 import userRouter from './src/routes/user';
+import breweriesRouter from './src/routes/breweries';
 import cors from 'cors'; //const cors = require('cors');
 import dotenv from 'dotenv';
 
@@ -18,10 +19,11 @@ mongoose.connect(process.env.DATABASE_CONNECTION_STRING)
 .then(()=> console.log('Database Connected'))
 .catch((err)=> console.log('Error connecting to databse', err));
 
+
+app.use('/', userRouter);
+app.use('/', breweriesRouter);
+
 app.use(express.static(path.join(__dirname, '../../frontend/build')));
-app.get('/', (req, res) => res.sendFile(path.join(__dirname, "../../frontend/build", 'index.html')))
-
-app.use('/user', userRouter);
-
+app.get('/*', (req, res) => res.sendFile(path.join(__dirname, "../../frontend/build", 'index.html')))
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
 

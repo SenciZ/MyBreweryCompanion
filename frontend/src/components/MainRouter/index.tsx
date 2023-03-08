@@ -10,6 +10,7 @@ export const MainRouter: React.FC<IProps> = () => {
         <Routes>
             <Route path='/*' element={<Home />} />
             <Route path='about' element={<About />} />
+            {/* <Route path='search' element={<SearchResults />} */}
         </Routes>
   )
 }

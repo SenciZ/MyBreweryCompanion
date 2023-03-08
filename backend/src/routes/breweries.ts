@@ -1,7 +1,7 @@
-// import express from 'express';
-// export const breweryRouter = express.Router();
-// const BreweryController = require('../controllers/breweries')
+import express from 'express';
+export const breweriesRouter = express.Router();
+import * as BreweryController from '../controllers/breweries'
 
-// breweryRouter.get('/user', BreweryController.populateDB);
+breweriesRouter.get('/breweries/search', BreweryController.SearchBreweries);
 
-// module.exports = breweryRouter;
+export default breweriesRouter;
