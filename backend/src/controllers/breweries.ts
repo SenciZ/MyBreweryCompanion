@@ -1,7 +1,7 @@
 import axios from "axios";
 import { BreweryModel } from "../models/brewery";
 
-export const SearchBreweries = async (req, res) =>{
+export const SearchBrewery = async (req, res) =>{
     try {
         const searchName = req.query.name;
         if (!searchName) {

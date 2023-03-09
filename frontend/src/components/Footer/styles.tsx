@@ -3,8 +3,8 @@ import { MaxBoundaryContainer } from "../../styles/containers";
 
 export const FooterContainer = styled.footer`
     height: 140px;
+    width: 100%;
     background-color: ${({ theme }) => theme.colors.tertiary};
-    margin-top: 30px;
 `;
 
 export const FooterContainerInner = styled(MaxBoundaryContainer)``

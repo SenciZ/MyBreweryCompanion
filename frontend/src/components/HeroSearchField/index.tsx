@@ -24,8 +24,7 @@ export const HeroSearchField: React.FC<IProps> = ({ classname = '' }) => {
         dispatch(change([]));
         dispatch(changeLoading(true));
         setIsLoading(true);
-        navigate('/about');
-        fetch(`/breweries/search?name=${searchString}`)
+        fetch(`/brewery-search?name=${searchString}`)
             .then( res => res.json())
             .then( data => {
                 if (!!data.message) {
@@ -36,6 +35,7 @@ export const HeroSearchField: React.FC<IProps> = ({ classname = '' }) => {
                 setSearchString('');
                 dispatch(change(data));
                 setIsLoading(false);
+                navigate('/about');
                 console.log(data)
             }).catch(error => console.log(error.message, '/////'));
     }

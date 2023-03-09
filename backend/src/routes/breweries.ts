@@ -2,6 +2,6 @@ import express from 'express';
 export const breweriesRouter = express.Router();
 import * as BreweryController from '../controllers/breweries'
 
-breweriesRouter.get('/breweries/search', BreweryController.SearchBreweries);
+breweriesRouter.get('/brewery-search', BreweryController.SearchBrewery);
 
 export default breweriesRouter;
