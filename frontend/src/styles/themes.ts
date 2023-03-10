@@ -19,6 +19,8 @@ export const theme: DefaultTheme = {
     primary: '#FFBA08',
     secondary: '#C44622',
     tertiary: '#313131',
-    quaternary: '#ADADAD',
+    lightGray1: '#ADADAD',
+    lightGray2: '#C5C5C5',
+    lightGray3: '#F7F7F7',
   },
 };
