@@ -23,8 +23,8 @@ mongoose.connect(process.env.DATABASE_CONNECTION_STRING)
 app.use('/', userRouter);
 app.use('/', breweriesRouter);
 
-app.use(express.static(path.join(__dirname, '../../frontend/build')));
-app.get('/*', (req, res) => res.sendFile(path.join(__dirname, "../../frontend/build", 'index.html')))
+app.use(express.static(path.join(__dirname, '../frontend/build')));
+app.get('/*', (req, res) => res.sendFile(path.join(__dirname, "../frontend/build", 'index.html')))
 
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
 
