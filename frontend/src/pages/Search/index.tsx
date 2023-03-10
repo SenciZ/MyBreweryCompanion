@@ -38,6 +38,7 @@ export const Search: React.FC<IProps> = ({classname = ''}) => {
     },[query]);
 
     const renderSearchResults = useCallback((): JSX.Element | JSX.Element[] => {
+        if (searchResults === null) return;
         const content = searchResults.map((item:any) => <h1>{item.name}</h1>);
         return !!isLoading ? <h1>loading...</h1> : content
      } , [searchResults, isLoading])
