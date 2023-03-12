@@ -13,17 +13,24 @@ export const Search: React.FC<IProps> = ({classname = ''}) => {
     const [searchResults, setSearchResults] = useState<any | null>(null);
     const [updatedQuery, setUpdatedQuery] = useState('');
     const navigate = useNavigate();
+    const [ hasError, setHasError] = useState(false)
 
     const getSearchResults = async (e?: any) => {
         setIsLoading(true);
-        if (!!e) e.preventDefault();
+        e?.preventDefault();
         if (!!updatedQuery) {
             navigate(`/search?brewery=${updatedQuery}`);
             setUpdatedQuery('');
             setIsLoading(false);
         } else {
-            const results = await fetch(`/brewery-search?name=${query}`).then(res => res.json());
-            setSearchResults(results);
+            try {
+                const response = await fetch(`/brewery-search?name=${query}`);
+                const result = await response.json();
+                setSearchResults(result)
+            } catch (err) {
+                setHasError(true)
+                console.log(err);
+            }
             setIsLoading(false);
         };
     };
@@ -39,6 +46,9 @@ export const Search: React.FC<IProps> = ({classname = ''}) => {
 
     const renderSearchResults = useCallback((): JSX.Element | JSX.Element[] => {
         if (searchResults === null) return;
+        if (!!searchResults.message) {
+            return !!isLoading ? <h1>loading...</h1> : <h1>{searchResults.message}</h1>
+        }
         const content = searchResults.map((item:any) => <h1>{item.name}</h1>);
         return !!isLoading ? <h1>loading...</h1> : content
      } , [searchResults, isLoading])
@@ -56,7 +66,7 @@ export const Search: React.FC<IProps> = ({classname = ''}) => {
             </SearchContainer>
             <ResultsContainer>
                 <ResultsContainerInner>
-                    { renderSearchResults() }
+                    {!!hasError ? <h1> herro </h1> : renderSearchResults() }
                 </ResultsContainerInner>
             </ResultsContainer>
         </>
