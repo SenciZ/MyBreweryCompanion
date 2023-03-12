@@ -5,6 +5,7 @@ import userRouter from './src/routes/user';
 import breweriesRouter from './src/routes/breweries';
 import cors from 'cors'; //const cors = require('cors');
 import dotenv from 'dotenv';
+import errorHandler from './src/middleware/errorHandler';
 
 dotenv.config();
 const PORT = process.env.PORT || 8000;
@@ -25,6 +26,6 @@ app.use('/', userRouter);
 app.use('/', breweriesRouter);
 
 app.get('/*', (req, res) => res.sendFile(path.join(__dirname, "../../frontend/build", 'index.html')))
-
+app.use(errorHandler);
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
 
