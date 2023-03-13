@@ -27,6 +27,7 @@ export const Search: React.FC<IProps> = ({classname = ''}) => {
                 const response = await fetch(`/brewery-search?name=${query}`);
                 const result = await response.json();
                 setSearchResults(result)
+                setHasError(false)
             } catch (err) {
                 setHasError(true)
                 console.log(err);
