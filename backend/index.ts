@@ -23,9 +23,9 @@ mongoose.connect(process.env.DATABASE_CONNECTION_STRING)
 
 
 app.use('/', userRouter);
-app.use('/', breweriesRouter);
+app.use('/breweries', breweriesRouter);
 
 app.get('/*', (req, res) => res.sendFile(path.join(__dirname, "../../frontend/build", 'index.html')))
-// app.use(errorHandler);
+app.use(errorHandler);
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
 

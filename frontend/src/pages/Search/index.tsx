@@ -8,13 +8,13 @@ interface IProps {
 }
 
 export const Search: React.FC<IProps> = ({classname = ''}) => {
-    const [isLoading, setIsLoading] = useState(false);
+    const navigate = useNavigate();
     const query = new URLSearchParams(useLocation().search).get('brewery');
+    const [isLoading, setIsLoading] = useState(false);
     const [searchResults, setSearchResults] = useState<any | null>(null);
     const [updatedQuery, setUpdatedQuery] = useState('');
-    const navigate = useNavigate();
-    const [ hasError, setHasError] = useState(false)
-    const [ errorMessage, setErrorMessage] = useState('');
+    const [hasError, setHasError] = useState(false)
+    const [errorMessage, setErrorMessage] = useState('');
 
     const getSearchResults = async (e?: any) => {
         setIsLoading(true);
@@ -26,7 +26,7 @@ export const Search: React.FC<IProps> = ({classname = ''}) => {
         } else {
             try {
                 setIsLoading(true);
-                const response = await fetch(`/brewery-search?name=${query}`);
+                const response = await fetch(`/breweries/search?name=${query}`);
                 const result = await response.json();
                 if (response.ok) {
                     setSearchResults(result)
@@ -54,6 +54,7 @@ export const Search: React.FC<IProps> = ({classname = ''}) => {
     },[query]);
 
     const renderSearchResults = useCallback((): JSX.Element | JSX.Element[] => {
+        if(!!hasError) return <h1>{errorMessage}</h1>
         if (searchResults === null && !!isLoading) return <h1>Loading...</h1>
         if (searchResults === null) return;
         const content = searchResults.map((item:any) => <h1>{item.name}</h1>);
@@ -73,7 +74,7 @@ export const Search: React.FC<IProps> = ({classname = ''}) => {
             </SearchContainer>
             <ResultsContainer>
                 <ResultsContainerInner>
-                    {!!hasError ? <h1>{errorMessage}</h1> : renderSearchResults() }
+                    { renderSearchResults() }
                 </ResultsContainerInner>
             </ResultsContainer>
         </>
