@@ -34,7 +34,7 @@ export const DesktopNav: React.FC<IProps> = ({ classname = '' }) => {
     const renderLinks = useCallback(() => {
         const links = navLinks.map((link) => {
             return (
-                <Link to={ link.to } className={ link.classname }>{ link.name }</Link>
+                <Link key={link.name} to={ link.to } className={ link.classname }>{ link.name }</Link>
             )
         })
         return <NavLinksContainer>{ links }</NavLinksContainer>;
