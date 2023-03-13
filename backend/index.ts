@@ -26,6 +26,6 @@ app.use('/', userRouter);
 app.use('/', breweriesRouter);
 
 app.get('/*', (req, res) => res.sendFile(path.join(__dirname, "../../frontend/build", 'index.html')))
-app.use(errorHandler);
+// app.use(errorHandler);
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
 

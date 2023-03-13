@@ -14,6 +14,7 @@ export const Search: React.FC<IProps> = ({classname = ''}) => {
     const [updatedQuery, setUpdatedQuery] = useState('');
     const navigate = useNavigate();
     const [ hasError, setHasError] = useState(false)
+    const [ errorMessage, setErrorMessage] = useState('');
 
     const getSearchResults = async (e?: any) => {
         setIsLoading(true);
@@ -24,16 +25,23 @@ export const Search: React.FC<IProps> = ({classname = ''}) => {
             setIsLoading(false);
         } else {
             try {
+                setIsLoading(true);
                 const response = await fetch(`/brewery-search?name=${query}`);
                 const result = await response.json();
-                setSearchResults(result)
-                setHasError(false)
+                if (response.ok) {
+                    setSearchResults(result)
+                    setHasError(false)
+                } else {
+                    setSearchResults(null);
+                    setHasError(true)
+                    setErrorMessage(result.message)
+                    console.log(result.message, 'else result.message')
+                }
             } catch (err) {
                 setHasError(true)
-                console.log(err);
             }
-            setIsLoading(false);
         };
+        setIsLoading(false);
     };
 
     const updateSearchQuery = (value: string) => {
@@ -46,12 +54,10 @@ export const Search: React.FC<IProps> = ({classname = ''}) => {
     },[query]);
 
     const renderSearchResults = useCallback((): JSX.Element | JSX.Element[] => {
+        if (searchResults === null && !!isLoading) return <h1>Loading...</h1>
         if (searchResults === null) return;
-        if (!!searchResults.message) {
-            return !!isLoading ? <h1>loading...</h1> : <h1>{searchResults.message}</h1>
-        }
         const content = searchResults.map((item:any) => <h1>{item.name}</h1>);
-        return !!isLoading ? <h1>loading...</h1> : content
+        return !!isLoading ? <h1>Loading...</h1> : content
      } , [searchResults, isLoading])
  
     return (
@@ -67,7 +73,7 @@ export const Search: React.FC<IProps> = ({classname = ''}) => {
             </SearchContainer>
             <ResultsContainer>
                 <ResultsContainerInner>
-                    {!!hasError ? <h1> herro </h1> : renderSearchResults() }
+                    {!!hasError ? <h1>{errorMessage}</h1> : renderSearchResults() }
                 </ResultsContainerInner>
             </ResultsContainer>
         </>
