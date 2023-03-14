@@ -1,7 +1,7 @@
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import { Link } from "react-router-dom";
 import { AppLogo } from "../Logo";
-import { AccountCTAContainer, DesktopNavContainer, InnerNavContainer, NavLinksContainer } from "./styles";
+import { AccountCTAContainer, InnerNavContainer, MobileNavContainer, NavLinksContainer } from "./styles";
 
 interface IProps {
     classname?: string;
@@ -54,13 +54,22 @@ export const MobileNav: React.FC<IProps> = ({ classname = '' }) => {
         )
     }
 
+    const [showMenu, setShowMenu] = useState('50px');
+
+    const onOpenMobileMenu = () => {
+        setShowMenu(prev => '-200px')
+    }
+
+    
+
     return (
-        <DesktopNavContainer>
+        <MobileNavContainer>
             <AppLogo />
-            <InnerNavContainer>
+            <button onClick={() => onOpenMobileMenu }>MENu</button>
+            <InnerNavContainer show={showMenu}>
                 { renderLinks() }
                 { renderAccountCTAs() }
             </InnerNavContainer>
-        </DesktopNavContainer>
+        </MobileNavContainer>
     );
 }

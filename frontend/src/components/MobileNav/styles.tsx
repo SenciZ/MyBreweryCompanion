@@ -1,11 +1,14 @@
 import styled from "styled-components";
 import { PrimaryFont } from "../../styles/styles";
 
-export const DesktopNavContainer = styled.div`
+export const MobileNavContainer = styled.div`
+    ${PrimaryFont}
     display: flex;
+    justify-content: space-between;
+    position: relative;
     width: 100%;
     background-color: ${({ theme }) => theme.colors.darkGray1};
-    ${PrimaryFont}
+    z-index: 20;
 `;
 
 export const NavLinksContainer = styled.nav`
@@ -40,8 +43,16 @@ export const AccountCTAContainer = styled.nav`
     }
 `;
 
-export const InnerNavContainer = styled.div`
+interface IProps {
+    show: string;
+}
+
+export const InnerNavContainer = styled.div<IProps>`
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+    position: absolute;
+    top: 50px;
+    background: red;
 `;
