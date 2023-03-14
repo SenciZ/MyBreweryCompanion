@@ -1,6 +1,7 @@
 import React from 'react'
 import { useAppData } from '../../contexts/appData';
 import { DesktopNav } from '../DesktopNav';
+import { MobileNav } from '../MobileNav';
 import { HeaderContainer, NavBarContainer } from './styles';
 
 type IProps = {
@@ -12,7 +13,7 @@ export const Header: React.FC<IProps> = ({ classname = '' }) => {
 
   const renderNavigation = () => {
     if (!!isDesktop) return <DesktopNav />;
-    return 'Hello';
+    return <MobileNav />;
   }
   return (
     <HeaderContainer>

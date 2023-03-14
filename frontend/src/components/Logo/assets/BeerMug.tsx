@@ -2,8 +2,6 @@ import * as React from "react";
 
 export const BeerMug = (props: any) => (
   <svg
-    width="auto"
-    height="auto"
     viewBox="0 0 368 490"
     style={{
       fillRule: "evenodd",

@@ -29,7 +29,7 @@ const navLinks: NavLink[] = [
     },
 ]
 
-export const DesktopNav: React.FC<IProps> = ({ classname = '' }) => {
+export const MobileNav: React.FC<IProps> = ({ classname = '' }) => {
 
     const renderLinks = useCallback(() => {
         const links = navLinks.map((link) => {
