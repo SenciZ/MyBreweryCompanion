@@ -1,13 +1,11 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { PrimaryFont } from "../../styles/styles";
 
 export const MobileNavContainer = styled.div`
     ${PrimaryFont}
     display: flex;
     justify-content: space-between;
-    position: relative;
     width: 100%;
-    background-color: ${({ theme }) => theme.colors.darkGray1};
     z-index: 20;
 `;
 
@@ -44,7 +42,7 @@ export const AccountCTAContainer = styled.nav`
 `;
 
 interface IProps {
-    show: string;
+    show: boolean;
 }
 
 export const InnerNavContainer = styled.div<IProps>`
@@ -53,6 +51,15 @@ export const InnerNavContainer = styled.div<IProps>`
     flex-direction: column;
     justify-content: space-between;
     position: absolute;
-    top: 50px;
-    background: red;
+    left: 0;
+    right: 0;
+    bottom: ${props => props.show ? '0px' : '100%'};
+    overflow: hidden;
+    top: 65px;
+    z-index: 1 !important;
+    animation-duration: 250ms;
+    background-color: ${({ theme }) => theme.colors.secondary};
+    transition: bottom 200ms ease-in-out;
+
 `;
+

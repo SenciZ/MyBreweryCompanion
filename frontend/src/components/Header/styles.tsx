@@ -10,5 +10,5 @@ export const HeaderContainer = styled.header`
 `;
 
 export const NavBarContainer = styled(MaxBoundaryContainer)`
-    padding: 5px 0;
+    padding: 10px 0;
 `;

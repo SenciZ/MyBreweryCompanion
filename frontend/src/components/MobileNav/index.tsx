@@ -34,7 +34,7 @@ export const MobileNav: React.FC<IProps> = ({ classname = '' }) => {
     const renderLinks = useCallback(() => {
         const links = navLinks.map((link) => {
             return (
-                <Link key={link.name} to={ link.to } className={ link.classname }>{ link.name }</Link>
+                <Link onClick={onOpenMobileMenu} key={link.name} to={ link.to } className={ link.classname }>{ link.name }</Link>
             )
         })
         return <NavLinksContainer>{ links }</NavLinksContainer>;
@@ -54,22 +54,29 @@ export const MobileNav: React.FC<IProps> = ({ classname = '' }) => {
         )
     }
 
-    const [showMenu, setShowMenu] = useState('50px');
+    const [showMenu, setShowMenu] = useState(false);
 
-    const onOpenMobileMenu = () => {
-        setShowMenu(prev => '-200px')
+    const onOpenMobileMenu = (e:any) => {
+        if (e.target.tagName === 'A') {
+            document.body.style.overflow = 'visible';  
+        }
+        if (!!showMenu) {
+            document.body.style.overflow = 'visible';  
+        } else {
+            document.body.style.overflow = 'hidden';
+        }
+        setShowMenu(prev => !prev)
     }
-
-    
 
     return (
         <MobileNavContainer>
             <AppLogo />
-            <button onClick={() => onOpenMobileMenu }>MENu</button>
-            <InnerNavContainer show={showMenu}>
-                { renderLinks() }
-                { renderAccountCTAs() }
-            </InnerNavContainer>
+            <button onClick={ onOpenMobileMenu }>MENu</button>
+                <InnerNavContainer  show={showMenu}>
+                    { renderLinks() }
+                    { renderAccountCTAs() }
+                </InnerNavContainer>
+
         </MobileNavContainer>
     );
 }
