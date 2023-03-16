@@ -5,16 +5,16 @@ import { useAppData } from '../../contexts/appData';
 import { HomePageContainer, HomePageInnerContainer } from './styles';
 
 interface IProps {
-    classname?: string;
+  classname?: string;
 }
 
-export const Home: React.FC<IProps> = ({classname = ''}) => {
+export const Home: React.FC<IProps> = ({ classname = '' }) => {
 
-    const { windowWidth, isDesktop } = useAppData()
-    return (
-        <>
-            <HomePageHero />
-        </>
-    )
+  const { windowWidth, isDesktop } = useAppData()
+  return (
+    <>
+      <HomePageHero />
+    </>
+  )
 }
 

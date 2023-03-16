@@ -18,7 +18,6 @@ export const Header: React.FC<IProps> = ({ classname = '' }) => {
   return (
     <HeaderContainer>
       <NavBarContainer className={'navBarContainer' + classname}>
-      {/* <HamburgerIcon /> */}
       { renderNavigation() }
       </NavBarContainer>
     </HeaderContainer>

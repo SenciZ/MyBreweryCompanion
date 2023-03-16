@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect, useContext} from 'react'
+import React, { createContext, useState, useEffect, useContext } from 'react'
 
 type AppDataContextType = {
   isDesktop: boolean;
@@ -41,10 +41,10 @@ export const AppData = ({ children }: Props) => {
 
     return () => window.removeEventListener('resize', onWindowResize);
   }, []);
-  
+
   return (
     <AppDataContext.Provider value={_appContext}>
-        {children}
+      {children}
     </AppDataContext.Provider>
   )
 }

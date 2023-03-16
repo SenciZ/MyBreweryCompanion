@@ -10,11 +10,11 @@ type IProps = {}
 export const MainRouter: React.FC<IProps> = () => {
   return (
     <MainContentContainer>
-        <Routes>
-            <Route path='about' element={<About />} />
-            <Route path='search' element={<Search />} />
-            <Route path='*' element={<Home />} />
-        </Routes>
+      <Routes>
+        <Route path='about' element={<About />} />
+        <Route path='search' element={<Search />} />
+        <Route path='*' element={<Home />} />
+      </Routes>
     </MainContentContainer>
   )
 }

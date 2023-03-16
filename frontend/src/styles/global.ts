@@ -8,6 +8,10 @@ export const GlobalStyle = createGlobalStyle`
     html {
         height: 100%;
     }
+
+    body.no-scroll {
+        overflow: hidden;
+    }
     
     * {
         margin: 0;
