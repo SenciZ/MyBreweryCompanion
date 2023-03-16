@@ -1,14 +1,16 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router';
+import { withTheme } from 'styled-components';
 import { SearchField } from '../../components/SearchField';
 import SearchResultItem from '../../components/SearchResultItem';
+import { IThemeProps } from '../../styles/themes';
 import { ResultsContainer, ResultsContainerInner, SearchContainer, SearchContainerInner } from './styles';
 
-interface IProps {
+interface IProps extends IThemeProps {
   classname?: string;
 }
 
-export const Search: React.FC<IProps> = ({ classname = '' }) => {
+const SearchBase: React.FC<IProps> = ({ classname = '', theme }) => {
   const navigate = useNavigate();
   const query = new URLSearchParams(useLocation().search).get('brewery');
   const [isLoading, setIsLoading] = useState(false);
@@ -76,8 +78,11 @@ export const Search: React.FC<IProps> = ({ classname = '' }) => {
       <ResultsContainer>
         <ResultsContainerInner>
           {renderSearchResults()}
+          <h1 style={{color: theme.colors.secondary}}>asdfasdf</h1>
         </ResultsContainerInner>
       </ResultsContainer>
     </>
   )
 }
+
+export const Search = withTheme(SearchBase);

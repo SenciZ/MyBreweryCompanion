@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
-import { ThemeProvider } from "styled-components";
+import { DefaultTheme, ThemeProvider } from "styled-components";
 import { AppData } from "../../contexts/appData";
 import { GlobalStyle } from "../../styles/global";
 import { Header } from "../Header";
@@ -12,6 +12,7 @@ import { Footer } from "../Footer";
 
 interface IProps {
   classname?: string;
+  theme?: DefaultTheme;
 };
 
 export const App: React.FC<IProps> = () => {
