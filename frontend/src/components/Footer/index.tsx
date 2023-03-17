@@ -1,4 +1,5 @@
 import React from 'react';
+import { AppLogo } from '../Logo';
 import { FooterContainer, FooterContainerInner } from './styles';
 
 interface IProps {
@@ -9,7 +10,7 @@ export const Footer: React.FC<IProps> = ({ classname='' }) => {
     return (
         <FooterContainer className={ classname }>
             <FooterContainerInner>
-                
+                <AppLogo />
             </FooterContainerInner>
         </FooterContainer>
     );
