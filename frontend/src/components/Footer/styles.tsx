@@ -6,6 +6,7 @@ export const FooterContainer = styled.footer`
   justify-content: center;
   width: 100%;
   padding: 10px 0;
+	color: red;
   background-color: ${({ theme }) => theme.colors.tertiary};
 `;
 
