@@ -1,4 +1,5 @@
-import { createGlobalStyle, css } from "styled-components";
+import { createGlobalStyle } from "styled-components";
+import { PrimaryFont } from "./styles";
 
 export const GlobalStyle = createGlobalStyle`
     body {
@@ -14,6 +15,7 @@ export const GlobalStyle = createGlobalStyle`
     }
     
     * {
+        ${PrimaryFont}
         margin: 0;
         padding: 0;
         box-sizing: border-box;

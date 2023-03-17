@@ -26,6 +26,7 @@ export const HeroSearchFieldContainer = styled.form`
    }
 
    button {
+      ${PrimaryFont}
     background-color: ${({ theme }) => theme.colors.tertiary};
     color: #FFF;
     width: 15%;

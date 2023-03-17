@@ -24,8 +24,8 @@ const SearchItem: React.FC<IProps> = ({ classname = '', resultItem }) => {
 		<div className={classname}>
 			{ renderLogo() }
 			<h1>{resultItem.name}</h1>
+			<h1>{[resultItem.city,' ',resultItem.state]}</h1>
 			<p>{resultItem.website}</p>
-			asdf
 		</div>
 	)
 }

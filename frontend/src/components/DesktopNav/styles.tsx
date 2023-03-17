@@ -1,11 +1,10 @@
 import styled from "styled-components";
-import { PrimaryFont } from "../../styles/styles";
+import { PrimaryFont, SecondaryFont } from "../../styles/styles";
 
 export const DesktopNavContainer = styled.div`
     display: flex;
     width: 100%;
     background-color: ${({ theme }) => theme.colors.darkGray1};
-    ${PrimaryFont}
 `;
 
 export const NavLinksContainer = styled.nav`
@@ -30,7 +29,6 @@ export const AccountCTAContainer = styled.nav`
     }
 
     button {
-        ${PrimaryFont}
         color: #FFF;
         border: none;
         background: none;

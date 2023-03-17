@@ -22,8 +22,8 @@ export const theme: DefaultTheme = {
     lightGray1: '#ADADAD',
     lightGray2: '#C5C5C5',
     lightGray3: '#F7F7F7',
-    darkGray1: 'red',
+    darkGray1: '#313131',
     darkGray3: 'green',
-    success: 'blue',
+    success: 'orange',
   },
 };

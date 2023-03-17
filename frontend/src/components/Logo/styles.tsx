@@ -10,16 +10,17 @@ export const LogoContainer = styled.a`
     }
     
     h1 {
-        ${SecondaryFont}
         font-weight: 400;
         font-size: 1.35rem;
         align-text: center;
 
         .logo-brewery {
+            ${SecondaryFont}
             color: ${({ theme }) => theme.colors.primary};
         }
         
         .logo-companion {
+            ${SecondaryFont}
             color: #FFF;
         }
 }`;
