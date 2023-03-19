@@ -22,8 +22,8 @@ mongoose.connect(process.env.DATABASE_CONNECTION_STRING)
 .catch((err)=> console.log('Error connecting to databse', err));
 
 
-app.use('/', userRouter);
-app.use('/breweries', breweriesRouter);
+// app.use('/user', userRouter);
+app.use('/', breweriesRouter);
 
 app.get('/*', (req, res) => res.sendFile(path.join(__dirname, "../../frontend/build", 'index.html')))
 app.use(errorHandler);

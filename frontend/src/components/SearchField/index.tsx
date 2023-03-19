@@ -28,7 +28,7 @@ export const SearchField: React.FC<IProps> = ({
       <input
         type='text'
         required
-        placeholder='Search for a Brewery'
+        placeholder='Search for a Brewery Now'
         id='brewery-search'
         onChange={onChangeHandler}
         value={searchString}

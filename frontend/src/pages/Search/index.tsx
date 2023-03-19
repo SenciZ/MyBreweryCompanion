@@ -29,7 +29,7 @@ const SearchBase: React.FC<IProps> = ({ classname = '', theme }) => {
     } else {
       try {
         setIsLoading(true);
-        const response = await fetch(`/breweries/search?name=${query}`);
+        const response = await fetch(`/breweries?name=${query}`);
         const result = await response.json();
         if (response.ok) {
           setSearchResults(result)

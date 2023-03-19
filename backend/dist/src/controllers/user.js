@@ -16,6 +16,7 @@ const userRegister = (req, res) => {
 };
 exports.userRegister = userRegister;
 const userSave = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    console.log('hitt');
     const { username, email, password } = req.body;
     const userExists = yield user_1.UserModel.findOne({ username: username });
     if (userExists)

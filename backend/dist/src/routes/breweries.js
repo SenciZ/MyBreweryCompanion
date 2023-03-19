@@ -30,7 +30,7 @@ exports.breweriesRouter = void 0;
 const express_1 = __importDefault(require("express"));
 exports.breweriesRouter = express_1.default.Router();
 const BreweryController = __importStar(require("../controllers/breweries"));
-exports.breweriesRouter.get('/search', BreweryController.SearchBreweries);
+exports.breweriesRouter.get('/breweries', BreweryController.SearchBreweries);
 // used to read all breweries in breweriesDBList and put them into MongoDB
 // breweriesRouter.get('/brewery-seed', BreweryController.seedDb);
 exports.default = exports.breweriesRouter;

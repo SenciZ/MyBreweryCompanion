@@ -7,6 +7,7 @@ import { UserModel } from '../models/user'
     }
     
     export const userSave = async (req: Request, res: Response) => {
+        console.log('hitt')
         const { username, email, password } = req.body;
         const userExists = await UserModel.findOne({ username: username });
         if (userExists) return res.status(404).json( {message: 'Username is taken'});
