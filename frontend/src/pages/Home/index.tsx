@@ -14,6 +14,7 @@ export const Home: React.FC<IProps> = ({ classname = '' }) => {
   return (
     <>
       <HomePageHero />
+      <img src='https://s3.amazonaws.com/logos.brewerycompanion/confluence_brewing_logo.png' alt='confluence' />
     </>
   )
 }
