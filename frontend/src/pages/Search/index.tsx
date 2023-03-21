@@ -13,6 +13,7 @@ interface IProps extends IThemeProps {
 const SearchBase: React.FC<IProps> = ({ classname = '', theme }) => {
   const navigate = useNavigate();
   const query = new URLSearchParams(useLocation().search).get('brewery');
+  const page = new URLSearchParams(useLocation().search).get('page');
   const [isLoading, setIsLoading] = useState(false);
   const [searchResults, setSearchResults] = useState<any | null>(null);
   const [updatedQuery, setUpdatedQuery] = useState('');
