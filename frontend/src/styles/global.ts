@@ -3,11 +3,11 @@ import { PrimaryFont } from "./styles";
 
 export const GlobalStyle = createGlobalStyle`
     body {
-        height: 100%;
+        min-height: 100vh;
     }
 
     html {
-        height: 100%;
+        min-height: 100vh;
     }
 
     body.no-scroll {

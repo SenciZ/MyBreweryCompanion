@@ -14,14 +14,14 @@ export const HeroSectionContainer = styled(Section)`
     background-size: cover;
     background-repeat: no-repeat;
     background-blend-mode: soft-light;
-`
+`;
 
 export const HeroSectionInner = styled(MaxBoundaryContainer)`
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-`
+`;
 
 export const HeroSectionInfo = styled.div`
     display: flex;
@@ -34,8 +34,13 @@ export const HeroSectionInfo = styled.div`
 
     .hero-section-title {
         color: #FFF;
+        font-size: 2.5rem;
+        line-height: 3rem; 
+
+        @media (${({ theme }) => theme.breakpoints.smMin}) {
         font-size: 3.5rem;
-        line-height: 4rem;
+        line-height: 4rem;      
+        }  
     }
 
     h3 {
