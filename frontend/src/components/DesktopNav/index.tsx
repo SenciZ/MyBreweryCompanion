@@ -25,7 +25,7 @@ const navLinks: NavLink[] = [
         name: 'Browse Breweries',
         classname: 'nav-link',
         id: 'about-link',
-        to: '/browse'
+        to: '/search'
     },
 ]
 

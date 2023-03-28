@@ -27,7 +27,6 @@ const StyledText = withStyles(Text)
     <>
       <HomePageHero />
       <IntroductionSection />
-      <img src='https://s3.amazonaws.com/logos.brewerycompanion/confluence_brewing_logo.png' alt='confluence' />
     </>
   )
 }
