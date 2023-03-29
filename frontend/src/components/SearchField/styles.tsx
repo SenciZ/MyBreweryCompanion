@@ -3,7 +3,7 @@ import { PrimaryFont, SecondaryFont } from "../../styles/styles";
 
 export const SearchFieldContainer = styled.form`
    background-color: #FFF;
-   border-radius: 15px;
+   border-radius: 155px;
    height: 3rem;
    width: 90%;
    display: flex;
@@ -20,7 +20,7 @@ export const SearchFieldContainer = styled.form`
     ${SecondaryFont}
     width: 85%;
     border: 1px solid ${({ theme }) => theme.colors.lightGray2};
-    border-radius: 15px 0 0 15px;
+    border-radius: 155px 0 0 155px;
    //  border: none;
     padding: 10px;
     font-size: 1.125rem;
@@ -30,7 +30,7 @@ export const SearchFieldContainer = styled.form`
     background-color: ${({ theme }) => theme.colors.tertiary};
     color: #FFF;
     width: 15%;
-    border-radius: 0 15px 15px 0;
+    border-radius: 0 155px 155px 0;
     border: none;
     cursor: pointer;
    }
