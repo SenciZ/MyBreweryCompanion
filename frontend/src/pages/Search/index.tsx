@@ -12,25 +12,39 @@ interface IProps extends IThemeProps {
 
 const SearchBase: React.FC<IProps> = ({ classname = '', theme }) => {
   const navigate = useNavigate();
-  const query = new URLSearchParams(useLocation().search).get('brewery');
+  const query = new URLSearchParams(useLocation().search).get('query');
   const page = new URLSearchParams(useLocation().search).get('page');
   const [isLoading, setIsLoading] = useState(false);
   const [searchResults, setSearchResults] = useState<any | null>(null);
+  const [pageNumber, setPageNumber] = useState<number | null>(0);
   const [updatedQuery, setUpdatedQuery] = useState('');
   const [hasError, setHasError] = useState(false)
   const [errorMessage, setErrorMessage] = useState('');
+
+  console.log('rerender')
+
+  const incrementPage = () => {
+    setPageNumber(prev => prev+1)
+    navigate(`/search?query=${updatedQuery || query}${!!pageNumber ? `&page=${pageNumber || page}` : `&page=${page}`}`);
+    getSearchResults();
+  }
+  const decrementPage = () => {
+    setPageNumber(prev => prev-1)
+    navigate(`/search?query=${updatedQuery || query}${!!pageNumber ? `&page=${pageNumber || page}` : `&page=${page}`}`);
+    getSearchResults();
+  }
 
   const getSearchResults = async (e?: any) => {
     setIsLoading(true);
     e?.preventDefault();
     if (!!updatedQuery) {
-      navigate(`/search?brewery=${updatedQuery}`);
+      navigate(`/search?query=${updatedQuery}${!!pageNumber ? `&page=${pageNumber || page}` : `&page=${page}`}`);
       setUpdatedQuery('');
       setIsLoading(false);
     } else {
       try {
         setIsLoading(true);
-        const response = await fetch(`/breweries?name=${query}`);
+        const response = await fetch(`/breweries?name=${query}${!!pageNumber ? `&page=${pageNumber}` : `&page=${page}`}`);
         const result = await response.json();
         if (response.ok) {
           setSearchResults(result)
@@ -55,7 +69,7 @@ const SearchBase: React.FC<IProps> = ({ classname = '', theme }) => {
   useEffect(() => {
     if (!query) return;
     getSearchResults();
-  }, [query]);
+  }, [query, pageNumber]);
 
   const renderSearchResults = useCallback((): JSX.Element | JSX.Element[] => {
     if (!!hasError) return <h1>{errorMessage}</h1>
@@ -63,7 +77,7 @@ const SearchBase: React.FC<IProps> = ({ classname = '', theme }) => {
     if (searchResults === null) return;
     const content = searchResults.map((item: any) => <SearchResultItem classname='brewery-container' resultItem={item} />)
     return !!isLoading ? <h1>Loading...</h1> : content
-  }, [searchResults, isLoading])
+  }, [searchResults, isLoading, pageNumber])
 
   return (
     <>
@@ -82,6 +96,7 @@ const SearchBase: React.FC<IProps> = ({ classname = '', theme }) => {
           <h1 style={{color: theme.colors.secondary}}>asdfasdf</h1>
         </ResultsContainerInner>
       </ResultsContainer>
+        <div><button onClick={decrementPage}>{`<`}</button> {page || 1} <button onClick={incrementPage}>{`>`}</button></div>
     </>
   )
 }

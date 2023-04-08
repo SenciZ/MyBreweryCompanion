@@ -1,6 +1,6 @@
 import { Schema, model } from "mongoose"
 
-interface IBrewery {
+export interface IBrewery {
     name: String,
     street: String,
     address2: String,

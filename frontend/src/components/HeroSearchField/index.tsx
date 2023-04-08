@@ -36,7 +36,7 @@ export const HeroSearchField: React.FC<IProps> = ({ classname = '' }) => {
             setMissingSearchString(true);
             return;
         } 
-        navigate(`/search?brewery=${searchString}`);
+        navigate(`/search?query=${searchString}`);
     }
 
     return (
