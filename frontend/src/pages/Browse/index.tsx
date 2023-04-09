@@ -1,5 +1,4 @@
 import React, { useCallback, useEffect, useState } from 'react'
-import { useLocation, useNavigate } from 'react-router';
 import { withTheme } from 'styled-components';
 import { SearchField } from '../../components/SearchField';
 import SearchResultItem from '../../components/SearchResultItem';
@@ -12,16 +11,18 @@ interface IProps extends IThemeProps {
 
 const BrowseBase: React.FC<IProps> = ({ classname = '', theme }) => {
   const [isLoading, setIsLoading] = useState(false);
-  const [searchResults, setSearchResults] = useState<any | null>(null);
+  const [searchResults, setSearchResults] = useState<any | null>([]);
   const [pageNumber, setPageNumber] = useState<number | null>(1);
   const [updatedQuery, setUpdatedQuery] = useState('');
   const [hasError, setHasError] = useState(false)
   const [errorMessage, setErrorMessage] = useState('');
 
   const incrementPage = () => {
+    if( searchResults.length < 10 ) return
     setPageNumber(prev => prev+1)
   }
   const decrementPage = () => {
+    if( pageNumber === 1 ) return
     setPageNumber(prev => prev-1)
   }
 
@@ -63,13 +64,13 @@ const BrowseBase: React.FC<IProps> = ({ classname = '', theme }) => {
   };
 
   const updateSearchQuery = (value: string) => {
+    setPageNumber(1);
     setUpdatedQuery(value);
   };
 
   useEffect(() => {
-    // if (!updatedQuery) return;
     getSearchResults();
-  }, [updatedQuery, pageNumber]);
+  }, [pageNumber]);
 
   const renderSearchResults = useCallback((): JSX.Element | JSX.Element[] => {
     if (!!hasError) return <h1>{errorMessage}</h1>
@@ -77,7 +78,7 @@ const BrowseBase: React.FC<IProps> = ({ classname = '', theme }) => {
     if (searchResults === null) return;
     const content = searchResults.map((item: any) => <SearchResultItem classname='brewery-container' resultItem={item} />)
     return !!isLoading ? <h1>Loading..ddd.</h1> : content
-  }, [searchResults, isLoading])
+  }, [searchResults, isLoading, errorMessage, hasError])
 
   return (
     <>
@@ -95,7 +96,7 @@ const BrowseBase: React.FC<IProps> = ({ classname = '', theme }) => {
           {renderSearchResults()}
         </ResultsContainerInner>
       </ResultsContainer>
-        <div><button onClick={decrementPage}>{`<`}</button> {pageNumber} <button onClick={incrementPage}>{`>`}</button></div>
+        <div><button onClick={decrementPage} disabled={ pageNumber === 1 }>{`<`}</button> {pageNumber} <button disabled={searchResults < 10} onClick={incrementPage}>{`>`}</button></div>
     </>
   )
 }
