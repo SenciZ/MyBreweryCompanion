@@ -10,5 +10,5 @@ export const Section = styled.section`
 
 export const MaxBoundaryContainer = styled.div`
     width: 95%;
-    max-width: 1070px;
+    max-width: 1250px;
 `;

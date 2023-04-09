@@ -3,7 +3,8 @@ export const breweriesRouter = express.Router();
 import * as BreweryController from '../controllers/breweries'
 import errorHandler from '../middleware/errorHandler';
 
-breweriesRouter.get('/breweries', BreweryController.SearchBreweries);
+breweriesRouter.get('/breweries', BreweryController.BrowseBreweries);
+breweriesRouter.get('/breweries/search', BreweryController.SearchBreweries);
 
 
 // used to read all breweries in breweriesDBList and put them into MongoDB
