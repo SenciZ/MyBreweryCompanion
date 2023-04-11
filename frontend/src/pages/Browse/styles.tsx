@@ -13,25 +13,9 @@ export const SearchContainerInner = styled(MaxBoundaryContainer)`
 export const ResultsContainer = styled(Section)``;
 
 export const ResultsContainerInner = styled(MaxBoundaryContainer)`
-	min-height: 95vh;
-  dislay: flex;
-  justify-content: center;
-
-  .brewery-container {
-    ${PrimaryFont}
-    font-size: 14px; 
-    border-top: 1px solid red;
+    // min-height: 95vh;
     display: flex;
-    justify-content: space-between;
-    height 70px;
-    padding: 5px;
-
-        img {
-            height: 100%;
-            width: auto;
-        }
-    }
-    .search-page-search {
-        background: red;
-    }
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
 `;

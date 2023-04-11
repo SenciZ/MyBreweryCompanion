@@ -1,5 +1,7 @@
 import { useState } from "react";
+import { H4 } from "../../styles/headings";
 import { IBrewery } from "../../types/global";
+import { ResultItemContainer } from "./styles";
 
 interface IProps {
 	classname?: string;
@@ -7,6 +9,15 @@ interface IProps {
 }
 
 const SearchItem: React.FC<IProps> = ({ classname = '', resultItem }) => {
+
+	const breweryUrl = () => {
+		return (
+			<p className="brewery-website">{resultItem.website.replace("https://www.", "")
+                .replace("http://www.", "")
+                .replace("https://", "")
+                .replace("http://", "")}</p>
+		)
+	}
 
 	const renderLogo = () => {
 		return (
@@ -21,12 +32,12 @@ const SearchItem: React.FC<IProps> = ({ classname = '', resultItem }) => {
 	}
 
 	return (
-		<div className={classname}>
+		<ResultItemContainer className={classname}>
 			{ renderLogo() }
-			<h1>{resultItem.name}</h1>
-			<h1>{[resultItem.city,' ',resultItem.state]}</h1>
-			<p>{resultItem.website}</p>
-		</div>
+			<H4>{resultItem.name}</H4>
+			<p className="brewery-location">{[resultItem.city,', ',resultItem.state]}</p>
+			{ breweryUrl() }
+		</ResultItemContainer>
 	)
 }
 
