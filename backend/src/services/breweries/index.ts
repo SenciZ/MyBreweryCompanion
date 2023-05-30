@@ -13,5 +13,5 @@ export const SearchAllBreweries = async (req: Request, res: Response, next: Next
   const searchRegex = new RegExp(`${searchName}`, 'i')
 
   const results = await BreweryModel.find( { $or: [ { name: searchRegex }, { city: searchRegex }, {state: searchRegex } , { zip: searchRegex } ] }).sort().limit(10).skip(searchPage*10);
-  return res.json(results);
+  return results;
 };

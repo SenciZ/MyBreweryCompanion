@@ -13,10 +13,10 @@ interface IProps extends IThemeProps {
 const SearchBase: React.FC<IProps> = ({ classname = '', theme }) => {
   const navigate = useNavigate();
   const query = new URLSearchParams(useLocation().search).get('query');
-  const page = new URLSearchParams(useLocation().search).get('page');
+  const page = new URLSearchParams(useLocation().search).get('page') || 1;
   const [isLoading, setIsLoading] = useState(false);
   const [searchResults, setSearchResults] = useState<any | null>(null);
-  const [pageNumber, setPageNumber] = useState<number | null>(0);
+  const [pageNumber, setPageNumber] = useState<number>(0);
   const [updatedQuery, setUpdatedQuery] = useState('');
   const [hasError, setHasError] = useState(false)
   const [errorMessage, setErrorMessage] = useState('');
@@ -44,7 +44,7 @@ const SearchBase: React.FC<IProps> = ({ classname = '', theme }) => {
     } else {
       try {
         setIsLoading(true);
-        const response = await fetch(`/breweries?name=${query}${!!pageNumber ? `&page=${pageNumber}` : `&page=${page}`}`);
+        const response = await fetch(`/breweries/search?name=${query}${!!pageNumber ? `&page=${pageNumber}` : `&page=${page}`}`);
         const result = await response.json();
         if (response.ok) {
           setSearchResults(result)
@@ -93,7 +93,6 @@ const SearchBase: React.FC<IProps> = ({ classname = '', theme }) => {
       <ResultsContainer>
         <ResultsContainerInner>
           {renderSearchResults()}
-          <h1 style={{color: theme.colors.secondary}}>asdfasdf</h1>
         </ResultsContainerInner>
       </ResultsContainer>
         <div><button onClick={decrementPage}>{`<`}</button> {page || 1} <button onClick={incrementPage}>{`>`}</button></div>
