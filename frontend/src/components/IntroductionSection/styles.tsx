@@ -68,6 +68,7 @@ export const ImageContainer = styled.div`
   width: 40%;
   background-image: url('https://s3.amazonaws.com/logos.brewerycompanion/homepage-breweries.png');
   background-size: contain;
+  background-position: center;
   background-repeat: no-repeat;
   margin-left: 40px;
 `;
@@ -77,5 +78,6 @@ export const MobileImageContainer = styled.div`
   width: 100%;
   background-image: url('https://s3.amazonaws.com/logos.brewerycompanion/mobile-brewery.png');
   background-size: contain;
+  background-position: center;
   background-repeat: no-repeat;
 `;
