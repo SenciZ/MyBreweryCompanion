@@ -25,5 +25,6 @@ export const theme: DefaultTheme = {
     darkGray1: '#313131',
     darkGray3: 'green',
     success: 'orange',
+    white: '#FFFFFF',
   },
 };

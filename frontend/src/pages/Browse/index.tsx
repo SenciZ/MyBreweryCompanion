@@ -3,7 +3,7 @@ import { withTheme } from 'styled-components';
 import { SearchField } from '../../components/SearchField';
 import SearchResultItem from '../../components/SearchResultItem';
 import { IThemeProps } from '../../styles/themes';
-import { ResultsContainer, ResultsContainerInner, SearchContainer, SearchContainerInner } from './styles';
+import { BrowsePageWrapper, ResultsContainer, ResultsContainerInner, SearchContainer, SearchContainerInner } from './styles';
 
 interface IProps extends IThemeProps {
   classname?: string;
@@ -81,7 +81,7 @@ const BrowseBase: React.FC<IProps> = ({ classname = '', theme }) => {
   }, [searchResults, isLoading, errorMessage, hasError])
 
   return (
-    <>
+    <BrowsePageWrapper>
       <SearchContainer>
         <SearchContainerInner>
           <SearchField
@@ -97,7 +97,7 @@ const BrowseBase: React.FC<IProps> = ({ classname = '', theme }) => {
         </ResultsContainerInner>
       </ResultsContainer>
         <div><button onClick={decrementPage} disabled={ pageNumber === 1 }>{`<`}</button> {pageNumber} <button disabled={searchResults < 10} onClick={incrementPage}>{`>`}</button></div>
-    </>
+    </BrowsePageWrapper>
   )
 }
 
