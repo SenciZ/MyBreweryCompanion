@@ -37,6 +37,7 @@ declare module 'styled-components' {
       darkGray1: string,
       darkGray3: string,
       success: string,
+      white: string,
     };
   }
 }

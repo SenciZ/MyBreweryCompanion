@@ -10,6 +10,8 @@ export const ResultItemContainer = styled.div`
   height: 235px;
   border: 1px solid ${({ theme }) => theme.colors.lightGray1};
   border-radius: 5px;
+  background-color: ${({ theme }) => theme.colors.white};
+  margin-bottom: 20px;
 
   img {
     max-width: 50%;
