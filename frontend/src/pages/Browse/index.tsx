@@ -31,7 +31,7 @@ const BrowseBase: React.FC<IProps> = ({ classname = '', theme }) => {
     e?.preventDefault();
     if(!!updatedQuery) {
       setIsLoading(true);
-      const response = await fetch(`/breweries/search?name=${updatedQuery}&page=${pageNumber}`);
+      const response = await fetch(`https://mybrewerycompanion-production.up.railway.app/breweries/search?name=${updatedQuery}&page=${pageNumber}`);
       const result = await response.json();
       if (response.ok) {
         setSearchResults(result)
@@ -44,7 +44,7 @@ const BrowseBase: React.FC<IProps> = ({ classname = '', theme }) => {
       }
     } else {
       try {
-        const response = await fetch(`/breweries?page=${pageNumber}`);
+        const response = await fetch(`https://mybrewerycompanion-production.up.railway.app/breweries?page=${pageNumber}`);
         const result = await response.json();
         if (response.ok) {
           setSearchResults(result)
