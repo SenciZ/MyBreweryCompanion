@@ -22,16 +22,15 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.breweriesRouter = void 0;
-const express_1 = __importDefault(require("express"));
-exports.breweriesRouter = express_1.default.Router();
+const express_1 = require("express");
 const BreweryController = __importStar(require("../controllers/breweries"));
-exports.breweriesRouter.get('/breweries', BreweryController.BrowseBreweries);
-exports.breweriesRouter.get('/breweries/search', BreweryController.SearchBreweries);
+exports.breweriesRouter = (0, express_1.Router)();
+exports.breweriesRouter.route('/')
+    .get(BreweryController.BrowseBreweries);
+exports.breweriesRouter.route('/search')
+    .get(BreweryController.SearchBreweries);
 // used to read all breweries in breweriesDBList and put them into MongoDB
 // breweriesRouter.get('/brewery-seed', BreweryController.seedDb);
-exports.default = exports.breweriesRouter;
+exports.default = (app) => app.use('/breweries', exports.breweriesRouter);

@@ -6,6 +6,7 @@
   "scripts": {
     "compile": "npx tsc",
     "start": "nodemon dist/index.js",
+    "start:admin": "MODE=admin nodemon dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Senad Zenkovic",
@@ -25,6 +26,7 @@
     "axios": "^1.3.2",
     "bcrypt": "^5.1.0",
     "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.0",
