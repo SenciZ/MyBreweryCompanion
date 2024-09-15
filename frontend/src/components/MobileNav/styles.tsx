@@ -11,14 +11,15 @@ export const MobileNavContainer = styled.div`
 
 export const NavLinksContainer = styled.nav`
     display: flex;
+    flex-direction: column;
     align-items: center;
-    margin-left: 70px;
     gap: 50px;
 
     .nav-link {
         color: #FFF;
         font-weight: 300;
         font-size: .9rem;
+        border-bottom: 1px solid ${({ theme }) => theme.colors.lightGray2};
     }
 `;
 export const AccountCTAContainer = styled.nav`
@@ -58,7 +59,7 @@ export const InnerNavContainer = styled.div<IProps>`
     top: 65px;
     z-index: 1 !important;
     animation-duration: 250ms;
-    background-color: ${({ theme }) => theme.colors.secondary};
+    background-color: ${({ theme }) => theme.colors.lightGray3};
     transition: bottom 200ms ease-in-out;
 
 `;
