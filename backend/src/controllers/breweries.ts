@@ -34,21 +34,21 @@ export const BrowseBreweries = async (req: Request, res: Response, next: NextFun
     }
 }
 
-// used to read all breweries in breweriesDBList and put them into MongoDB
-export const seedDb = async (req, res) => {
-    breweriesDBList.forEach(async (brewery: any) => {
-        await new BreweryModel({
-            name: brewery.name,
-            street: brewery.street,
-            address2: brewery.address2,
-            city: brewery.city,
-            state: brewery.state,
-            zip: brewery.postal_code,
-            country: brewery.country,
-            longitude: brewery.longitude,
-            latitude: brewery.latitude,
-            phone: brewery.phone,
-            website: brewery.website_url,
-        }).save();
-    })
-}
+// // used to read all breweries in breweriesDBList and put them into MongoDB
+// export const seedDb = async (req, res) => {
+//     breweriesDBList.forEach(async (brewery: any) => {
+//         await new BreweryModel({
+//             name: brewery.name,
+//             street: brewery.street,
+//             address2: brewery.address2,
+//             city: brewery.city,
+//             state: brewery.state,
+//             zip: brewery.postal_code,
+//             country: brewery.country,
+//             longitude: brewery.longitude,
+//             latitude: brewery.latitude,
+//             phone: brewery.phone,
+//             website: brewery.website_url,
+//         }).save();
+//     })
+// }
