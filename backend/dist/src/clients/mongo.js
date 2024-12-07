@@ -17,7 +17,7 @@ const mongoose_1 = __importDefault(require("mongoose"));
 class MongoClient {
     constructor() {
         this.init = () => __awaiter(this, void 0, void 0, function* () {
-            mongoose_1.default.connect(process.env.DATABASE_CONNECTION_STRING);
+            mongoose_1.default.connect('mongodb+srv://senciz:SenoOmis!1725%40@cluster0.chrdhyk.mongodb.net/MyBreweryCompanion');
             mongoose_1.default.connection.on('connected', () => {
                 console.log('Connected to database');
             });

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "compile": "npx tsc",
-    "start": "nodemon dist/index.js",
+    "start": "npx tsc && nodemon dist/index.js",
     "start:admin": "MODE=admin nodemon dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
