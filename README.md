@@ -1,8 +1,6 @@
 # MyBreweryCompanion
 
-I am making an app called Brewery Companion. I have a database that has over 7,000 breweries which includes their name, address, logo, coordinates and website information. I want to add lots of features to the application such as users who can like breweries add beers to them and more. Please suggest what features I should create in order to make it a popular peer to peer application.
-
-## Here are some features that can make your Brewery Companion app more engaging and popular among users: ##
+I am making an app called Brewery Companion. I have a database that has over 7,000 breweries which includes their name, address, logo, coordinates and website information. I want to add lots of features to the application such as users who can like breweries add beers to them and more.
 
 | Feature | Description |
 | ----------- | ----------- |
