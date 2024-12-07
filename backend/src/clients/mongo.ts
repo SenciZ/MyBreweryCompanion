@@ -1,8 +1,12 @@
 import mongoose from "mongoose";
 
+const {
+  DB_CONNECTION_STRING
+} = process.env;
+
 class MongoClient {
   init = async () => {
-    mongoose.connect('mongodb+srv://senciz:SenoOmis!1725%40@cluster0.chrdhyk.mongodb.net/MyBreweryCompanion')
+    mongoose.connect(`${DB_CONNECTION_STRING}`)
     mongoose.connection.on('connected', () => {
       console.log('Connected to database')
     })
